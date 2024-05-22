@@ -1,11 +1,12 @@
+require('dotenv').config();
 const mysql = require('mysql');
 
 //create connection to the database
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'user1',
-    password: '1234',
-    database: 'mydatabase'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_FOODRECIPEAPP
 });
 
 //open the MySQL connection
